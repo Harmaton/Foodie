@@ -5,7 +5,7 @@ package com.njagi.foodie.feature_category
 
         object Empty: CategoryState()
         object Loading: CategoryState()
-        class Success(val data: Category): CategoryState()
+        class Success(val data: List<CategoryX>): CategoryState()
         class Error(val message: String): CategoryState()
 
     }

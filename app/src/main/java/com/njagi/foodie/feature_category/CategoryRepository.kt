@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class CategoryRepository @Inject constructor(private val api: FoodieApi) {
 
-    suspend fun getAllCategories(): Category {
+    suspend fun getAllCategories(): List<CategoryX> {
         return api.getCategories()
 
     }

@@ -2,6 +2,8 @@ package com.njagi.foodie.di
 
 import com.njagi.foodie.api.FoodieApi
 import com.njagi.foodie.constants.CONSTANTS.BASE_URL
+import com.njagi.foodie.utils.RequestInterceptor
+import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,6 +12,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -23,6 +26,7 @@ object NetworkModule {
             .addInterceptor(loggingInterceptor)
             .build()
     }
+
 
     @Provides
     fun retrofit(okHttpClient: OkHttpClient): Retrofit {
