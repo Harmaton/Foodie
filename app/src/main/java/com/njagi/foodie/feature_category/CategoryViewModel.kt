@@ -15,9 +15,11 @@ import javax.inject.Inject
 class CategoryViewModel @Inject constructor(private val categoryRepo: CategoryRepository) :ViewModel() {
 
     private var _categorystate = MutableStateFlow<CategoryState>(CategoryState.Empty)
+
     val categorystate: StateFlow<CategoryState> = _categorystate
 
     init {
+        fetchCategories()
 
     }
 
@@ -28,15 +30,13 @@ class CategoryViewModel @Inject constructor(private val categoryRepo: CategoryRe
                val categoryResponse = categoryRepo.getAllCategories()
                _categorystate.value = CategoryState.Success(categoryResponse)
 
-
-
            }
            catch (ex: HttpException){
-
+               _categorystate.value = CategoryState.Error("Check your Connection")
 
            }
            catch (ex: IOException){
-
+               _categorystate.value = CategoryState.Error("Check your Problem")
            }
 
         }
