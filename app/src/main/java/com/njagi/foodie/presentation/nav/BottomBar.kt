@@ -1,4 +1,4 @@
-package com.njagi.foodie.presentation.common
+package com.njagi.foodie.presentation.nav
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.BottomNavigation
