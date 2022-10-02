@@ -15,7 +15,6 @@ import javax.inject.Inject
 class CategoryViewModel @Inject constructor(private val categoryRepo: CategoryRepository) :ViewModel() {
 
     private var _categorystate = MutableStateFlow<CategoryState>(CategoryState.Empty)
-
     val categorystate: StateFlow<CategoryState> = _categorystate
 
     init {
