@@ -37,6 +37,9 @@ class CategoryViewModel @Inject constructor(private val categoryRepo: CategoryRe
            catch (ex: IOException){
                _categorystate.value = CategoryState.Error("Check your Problem")
            }
+            catch (ex: IllegalStateException){
+                _categorystate.value = CategoryState.Error("Check the state returned")
+            }
 
         }
     }

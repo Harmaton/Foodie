@@ -4,7 +4,7 @@ import com.njagi.foodie.api.FoodieApi
 import javax.inject.Inject
 
 class CategoryRepository @Inject constructor(private val api: FoodieApi) {
-    suspend fun getAllCategories(): List<Category>{
+    suspend fun getAllCategories(): Category{
         return api.getCategories()
     }
 }

@@ -16,9 +16,10 @@ import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import com.njagi.foodie.feature_category.Category
+import com.njagi.foodie.feature_category.CategoryX
 
 @Composable
-fun CategorySection(categories: List<Category>) {
+fun CategorySection(categories: List<CategoryX>) {
 
     Box(
         modifier = Modifier
@@ -47,7 +48,7 @@ fun CategorySection(categories: List<Category>) {
 
 
 @Composable
-fun CategoryItem(categoryX: Category) {
+fun CategoryItem(categoryX: CategoryX) {
     Card(
         modifier = Modifier
             .width(100.dp)
@@ -60,7 +61,7 @@ fun CategoryItem(categoryX: Category) {
 
             Image(painter = rememberAsyncImagePainter(
                 ImageRequest.Builder(LocalContext.current)
-                    .data(data = categoryX.categories.strCategoryThumb)
+                    .data(data = categoryX.strCategoryThumb)
                     .apply (block = fun ImageRequest.Builder.() {
                         placeholder(coil.base.R.drawable.notification_template_icon_bg)
                         crossfade(true)
@@ -74,9 +75,9 @@ fun CategoryItem(categoryX: Category) {
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            Text(text = categoryX.categories.strCategory)
+            Text(text = categoryX.strCategory)
 
-            Text(text = categoryX.categories.strCategoryDescription, maxLines = 2)
+            Text(text = categoryX.strCategoryDescription, maxLines = 2)
         }
 
 
