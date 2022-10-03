@@ -24,6 +24,7 @@ object NetworkModule {
             .apply { level = HttpLoggingInterceptor.Level.BODY }
         return OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
+            .addInterceptor(RequestInterceptor())
             .build()
     }
 

@@ -1,14 +1,12 @@
 package com.njagi.foodie.api
 
-
-import com.njagi.foodie.constants.CONSTANTS.CATEGORIES_ENDPOINT
-import com.njagi.foodie.feature_category.Category
-import com.njagi.foodie.feature_category.CategoryX
+import com.njagi.foodie.constants.CONSTANTS
+import com.njagi.foodie.model_recipe.Recipes
 import retrofit2.http.GET
 
 interface FoodieApi {
 
-    @GET(CATEGORIES_ENDPOINT)
-    suspend fun getCategories() : Category
+    @GET(CONSTANTS.FINDBY_INGREDIENTS_ENDP)
+    suspend fun searchRecipeByIngridient(): Recipes
 
 }

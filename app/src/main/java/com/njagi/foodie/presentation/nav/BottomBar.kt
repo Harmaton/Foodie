@@ -16,7 +16,6 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 @Composable
 fun BottomBar(navHostController: NavHostController) {
 
-
     val screens = listOf(
         BottomBarScreen.Home,
         BottomBarScreen.Favourite

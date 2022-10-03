@@ -1,6 +1,8 @@
 package com.njagi.foodie.constants
 
 object CONSTANTS {
-    const val BASE_URL = "https://www.themealdb.com/api/json/v1/1/"
-    const val CATEGORIES_ENDPOINT = "categories.php"
+    const val BASE_URL = "https://api.spoonacular.com/"
+    const val API_KEY = "a9a211babebf45fca94d3a3529f69997"
+
+    const val FINDBY_INGREDIENTS_ENDP = "recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=2"
 }

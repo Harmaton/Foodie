@@ -1,8 +1,6 @@
 package com.njagi.foodie.presentation
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -11,16 +9,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
-import com.njagi.foodie.feature_category.CategoryState
-import com.njagi.foodie.feature_category.CategoryViewModel
-import com.njagi.foodie.presentation.common.CategorySection
+import com.njagi.foodie.presentation.common.RecipeSection
 import com.njagi.foodie.presentation.nav.BottomBar
 import com.njagi.foodie.presentation.common.TopAppSection
+import com.njagi.foodie.viewmodels.RecipeState
+import com.njagi.foodie.viewmodels.RecipeViewModel
 
 @Composable
 fun HomeScreen() {
-
     val navcontroller = rememberNavController()
+
     Scaffold(
         topBar = { TopAppSection()},
         bottomBar = { BottomBar(navHostController = navcontroller) }
@@ -29,27 +27,46 @@ fun HomeScreen() {
     Column(modifier = Modifier
         .padding(paddingValues)
         .fillMaxSize()) {
-        FetchCategoryData()
+        FetchRecipeData()
+        Spacer(modifier = Modifier.height(10.dp))
+       Text(text = "Done")
     }
 
     }
 }
 
 @Composable
-fun FetchCategoryData(
- categoryVM: CategoryViewModel = viewModel()
+fun FetchRecipeData(
+recipeViewModel: RecipeViewModel = viewModel()
 )
 {
 Column(modifier = Modifier
     .padding(10.dp)
     .fillMaxSize()) {
-    when(val state = categoryVM.categorystate.collectAsState().value){
+    when(val state = recipeViewModel.recipestate.collectAsState().value){
 
-        is CategoryState.Empty -> Text(text = "empty")
-        is CategoryState.Loading -> Text(text = "Loading ...")
-        is CategoryState.Success -> CategorySection(categories = state.data)
-        is CategoryState.Error -> Text(text = state.message)
+        is RecipeState.Empty -> Text(text = "Empty")
+        is RecipeState.Loading -> Text(text = "Loading ...")
+        is RecipeState.Success -> RecipeSection(recipes = state.data)
+        is RecipeState.Error -> Text(text = state.message)
+
     }
 
 }
 }
+
+//@Composable
+//fun FetchRandomMeal(
+//
+//)
+//{
+//    Column(modifier = Modifier
+//        .padding(10.dp)
+//        .fillMaxSize()) {
+//        when(){
+//
+//
+//        }
+//
+//    }
+//}
