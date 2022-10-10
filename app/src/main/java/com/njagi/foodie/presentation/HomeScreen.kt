@@ -22,15 +22,15 @@ import com.ramcosta.composedestinations.annotation.RootNavGraph
 @Destination
 @Composable
 fun HomeScreen(recipeViewModel: RecipeViewModel = hiltViewModel()) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+        ) {
 
-    Scaffold(
-        topBar = { TopAppSection()}
-    ) { paddingValues ->
-    Column(modifier = Modifier
-        .padding(paddingValues)
-        .fillMaxSize()) {
+            TopAppSection()
+            Spacer(modifier = Modifier.height(10.dp))
 
-            when(val state = recipeViewModel.recipestate.collectAsState().value){
+            when (val state = recipeViewModel.recipestate.collectAsState().value) {
 
                 is RecipeState.Empty -> Text(text = "Empty")
                 is RecipeState.Loading -> Text(text = "Loading ...")
@@ -38,18 +38,8 @@ fun HomeScreen(recipeViewModel: RecipeViewModel = hiltViewModel()) {
                 is RecipeState.Error -> Text(text = state.message)
 
 
+            }
 
         }
-
     }
-}
-
-@Composable
-fun FetchRecipeData(
-recipeViewModel: RecipeViewModel = viewModel()
-)
-{
-
-}
-}
 

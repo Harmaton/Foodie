@@ -21,12 +21,7 @@ import com.njagi.foodie.ui.theme.FoodieTheme
 fun TopAppSection(
     // TODO -> IMPLEMENT CHANGE OF SIZE WITH SCROLL
 ) {
-    TopAppBar(
-        backgroundColor = Color.Transparent,
-        contentColor = Color.Red,
-        elevation = 10.dp,
-        contentPadding = PaddingValues(10.dp),
-    ) {
+
         Row(modifier = Modifier
             .fillMaxWidth()
             .padding(10.dp),
@@ -58,7 +53,7 @@ fun TopAppSection(
 
         }
     }
-}
+
 
 @Composable
 fun TextFoodie() {
