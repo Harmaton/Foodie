@@ -1,6 +1,5 @@
 package com.njagi.foodie.utils
 
-import com.njagi.foodie.constants.CONSTANTS
 import okhttp3.Interceptor
 
 

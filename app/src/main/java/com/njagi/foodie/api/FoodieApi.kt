@@ -1,6 +1,6 @@
 package com.njagi.foodie.api
 
-import com.njagi.foodie.constants.CONSTANTS
+import com.njagi.foodie.utils.CONSTANTS
 import com.njagi.foodie.model_recipe.Recipes
 import retrofit2.http.GET
 

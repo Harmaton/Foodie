@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'com.google.devtools.ksp' version '1.6.21-1.0.6'
 }
 
 android {
@@ -39,11 +40,18 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.1.1'
+        kotlinCompilerExtensionVersion '1.2.0-rc02'
     }
     packagingOptions {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+    applicationVariants.all {
+        kotlin.sourceSets {
+            getByName(name) {
+                kotlin.srcDir("build/generated/ksp/$name/kotlin")
+            }
         }
     }
 }
@@ -94,6 +102,10 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-moshi:2.4.0"
     implementation 'com.squareup.moshi:moshi:1.13.0'
     kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.13.0'
+
+    //ramcosta navigation
+    implementation 'io.github.raamcosta.compose-destinations:core:1.5.9-beta'
+    ksp 'io.github.raamcosta.compose-destinations:ksp:1.5.9-beta'
 
     //Gson Converter
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'

@@ -20,14 +20,12 @@ import com.njagi.foodie.model_recipe.RecipesItem
 @Composable
 fun RecipeSection(recipes: Recipes) {
     LazyColumn(modifier = Modifier
-        .height(100.dp)
+        .fillMaxHeight()
         .fillMaxWidth()) {
         items(recipes.size){
-
             Recipe(RecipeItem = recipes[it])
         }
     }
-
 }
 
 @Composable
