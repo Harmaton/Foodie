@@ -1,79 +1,80 @@
 package com.njagi.foodie.presentation.common
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.sharp.Search
-import androidx.compose.material.icons.sharp.Share
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.njagi.foodie.R
 import com.njagi.foodie.ui.theme.FoodieTheme
 
 @Composable
 fun TopAppSection(
-    // TODO -> IMPLEMENT CHANGE OF SIZE WITH SCROLL
 ) {
 
-        Row(modifier = Modifier
+    Row(
+        modifier = Modifier
             .fillMaxWidth()
-            .padding(10.dp),
-            horizontalArrangement = Arrangement.SpaceBetween
-            , verticalAlignment = Alignment.CenterVertically
-        ) {
-            IconButton(onClick = {}) {
-                Icon(imageVector = Icons.Sharp.Share,
-                    contentDescription = "Search Meal",
-                    modifier = Modifier.padding(end = 20.dp))
+            .padding(15.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
 
+            IconButton(onClick = {}) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_baseline_style_24),
+                    contentDescription = "mode switch",
+                )
             }
 
-            Text(text = "Foodie!", color = Color.Red,
-                fontWeight = FontWeight.ExtraBold,
-                fontFamily = FontFamily.SansSerif,
-                fontStyle = FontStyle.Italic,
-                fontSize = 28.sp
-            )
+            TextFoodie()
 
-            IconButton(onClick = { /*TODO*/ },
+            IconButton(
+                onClick = { /*TODO*/ },
 
                 ) {
-                Icon(imageVector = Icons.Sharp.Search,
-                    contentDescription = "Search Meal",
-                    modifier = Modifier.padding(end = 20.dp))
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_baseline_next_plan_24),
+                    contentDescription = ""
+                )
             }
 
-
         }
+
+
     }
+
 
 
 @Composable
 fun TextFoodie() {
     Row(horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.Top) {
 
-       // val drawable = LocalContext.current.getDrawable()
-        Text(text = "Foodie!", color = Color.Red,
+        // val drawable = LocalContext.current.getDrawable()
+        Text(
+            text = "Foodie!", color = Color.Black,
             fontWeight = FontWeight.ExtraBold,
             fontFamily = FontFamily.SansSerif,
             fontStyle = FontStyle.Italic,
             fontSize = 28.sp
         )
-     //  Icon(painter = painterResource(id = drawable), contentDescription = "")
+        //  Icon(painter = painterResource(id = drawable), contentDescription = "")
     }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun TopAppBarPreview() {
-    FoodieTheme(){
+    FoodieTheme() {
         TopAppSection()
     }
 }

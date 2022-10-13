@@ -3,6 +3,7 @@ package com.njagi.foodie
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -24,6 +25,7 @@ class MainActivity : ComponentActivity() {
             FoodieTheme {
 
            DestinationsNavHost(navGraph = NavGraphs.root){
+
                composable(HomeScreenDestination){
                    HomeScreen(
                        recipeViewModel = hiltViewModel()
@@ -36,11 +38,3 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    FoodieTheme {
-       HomeScreen()
-    }
-}

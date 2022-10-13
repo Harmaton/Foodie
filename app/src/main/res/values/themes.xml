@@ -6,8 +6,8 @@
     </style>
 
     <style name="Theme.CustomSplashScreen" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenAnimationDuration">2000</item>
-        <item name="android:icon">@drawable/yummy</item>
+        <item name="windowSplashScreenAnimationDuration">3000</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_fastfood</item>
         <item name="windowSplashScreenBackground">@color/tomato</item>
         <item name="postSplashScreenTheme">@style/Theme.Foodie</item>
         <item name="windowSplashScreenIconBackgroundColor">@color/white</item>

@@ -10,9 +10,9 @@
         android:name=".FoodieApp"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/yummy"
+        android:icon="@drawable/ic_fastfood"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/yummy"
+        android:roundIcon="@drawable/ic_fastfood"
         android:supportsRtl="true"
         android:theme="@style/Theme.CustomSplashScreen"
         tools:targetApi="31">
