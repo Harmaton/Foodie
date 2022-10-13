@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.njagi.foodie.R
 import com.njagi.foodie.ui.theme.FoodieTheme
+import org.w3c.dom.Text
 
 @Composable
 fun TopAppSection(
@@ -24,7 +25,7 @@ fun TopAppSection(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(15.dp),
+            .padding(10.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -59,9 +60,9 @@ fun TopAppSection(
 fun TextFoodie() {
     Row(horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.Top) {
 
-        // val drawable = LocalContext.current.getDrawable()
+
         Text(
-            text = "Foodie!", color = Color.Black,
+            text = " Hey Foodie!", color = Color.Red,
             fontWeight = FontWeight.ExtraBold,
             fontFamily = FontFamily.SansSerif,
             fontStyle = FontStyle.Italic,

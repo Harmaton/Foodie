@@ -2,10 +2,9 @@ package com.njagi.foodie.presentation.common
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -23,10 +22,11 @@ import com.njagi.foodie.model_recipe.Recipes
 import com.njagi.foodie.model_recipe.RecipesItem
 
 @Composable
-fun RecipeSection(recipes: Recipes) {
+fun ApplesRecipeSection(recipes: Recipes) {
     LazyRow(modifier = Modifier
-        .height(160.dp),
-      contentPadding = PaddingValues(8.dp)
+        .height(200.dp).padding(top=1.dp),
+      contentPadding = PaddingValues(10.dp),
+        horizontalArrangement = Arrangement.spacedBy(20.dp)
         ) {
         items(recipes.size){
             Recipe(RecipeItem = recipes[it])
@@ -36,12 +36,16 @@ fun RecipeSection(recipes: Recipes) {
 
 @Composable
 fun Recipe(RecipeItem :RecipesItem ) {
+Box(modifier = Modifier
+    .width(200.dp)
+    .height(200.dp).background(Color.LightGray),
+    propagateMinConstraints = true) {
     Card(modifier = Modifier
         .height(150.dp)
-        .width(150.dp),
-    border = BorderStroke(1.dp, Color.Black),
-        shape = RoundedCornerShape(4.dp)
-        ) {
+        .fillMaxWidth()
+        ,
+        border = BorderStroke(1.dp, Color.Black)
+    ) {
         Image(painter = rememberAsyncImagePainter(
             ImageRequest.Builder(LocalContext.current)
                 .data(data = RecipeItem.image)
@@ -51,21 +55,26 @@ fun Recipe(RecipeItem :RecipesItem ) {
                 }).build()
 
         ), contentDescription = null,
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxSize(),
             contentScale = ContentScale.FillBounds)
+    }
 
-        Spacer(modifier = Modifier.height(4.dp))
-
-        Row(modifier = Modifier.padding(4.dp),
+    Row(
+        verticalAlignment = Alignment.Bottom,
         horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.Bottom
-            ) {
-            Text(
-                text = RecipeItem.title,
-                maxLines = 1,
-                fontSize = 14.sp,
-                fontWeight = FontWeight.SemiBold
-            )
-        }
+        modifier = Modifier.padding(4.dp)
+    ) {
+        Text(
+            text = RecipeItem.title,
+            maxLines = 2,
+            fontSize = 16.sp,
+            fontWeight = FontWeight.SemiBold
+        )
     }
 }
+
+
+}
+
+

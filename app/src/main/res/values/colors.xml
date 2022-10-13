@@ -2,6 +2,7 @@
 <resources>
     <color name="green">#37A92E</color>
     <color name="tomato">#7E322D</color>
+    <color name="lighttomato">#C6908C</color>
     <color name="orange_700">#AC7017</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
