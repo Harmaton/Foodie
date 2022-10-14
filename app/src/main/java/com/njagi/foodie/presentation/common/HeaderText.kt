@@ -13,23 +13,27 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
 fun HeaderText(text: String) {
-    Row(modifier = Modifier
-        .fillMaxWidth().padding(start=10.dp, top=4.dp)
-        .height(20.dp).background(Color.LightGray),
+    Row(
+        modifier = Modifier
+            .fillMaxWidth().padding(start = 10.dp, top = 4.dp, end = 10.dp)
+            .height(20.dp).background(Color.Black),
         horizontalArrangement = Arrangement.Start,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Text(text = text,
-        fontSize = 15.sp,
-            color = Color.Black,
+        Text(
+            text = text,
+            fontSize = 12.sp,
+            color = Color.White,
             fontStyle = FontStyle.Normal,
-            fontFamily = FontFamily.Monospace
+            fontFamily = FontFamily.Monospace,
+            modifier = Modifier.padding(start = 10.dp)
 
-            )
+        )
     }
 }

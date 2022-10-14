@@ -31,7 +31,7 @@ fun HomeScreen(recipeViewModel: RecipeViewModel = hiltViewModel()) {
 
         TopAppSection()
         SearchInputBox()
-        HeaderText(text = "Apple Recipes")
+        HeaderText(text = "Apple + Flour Recipes")
 
         when (val state = recipeViewModel.recipestate.collectAsState().value) {
 

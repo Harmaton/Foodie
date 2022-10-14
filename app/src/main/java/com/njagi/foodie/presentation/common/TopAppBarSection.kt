@@ -62,9 +62,9 @@ fun TextFoodie() {
 
 
         Text(
-            text = " Hey Foodie!", color = Color.Red,
+            text = " Hey Foodie!", color = Color.Black,
             fontWeight = FontWeight.ExtraBold,
-            fontFamily = FontFamily.SansSerif,
+            fontFamily = FontFamily.Monospace,
             fontStyle = FontStyle.Italic,
             fontSize = 28.sp
         )

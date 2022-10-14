@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
@@ -22,13 +23,16 @@ fun SearchInputBox() {
 
     OutlinedTextField(value = "",
         onValueChange = {},
-        placeholder = { Text(text = "Search ...", ) },
+        placeholder = { Text(text = "Search for Ingredients, recipes e.t.c ...", ) },
         leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = null) },
         trailingIcon = {
-            Icon(
-                painter = painterResource(id = com.njagi.foodie.R.drawable.baseline_no_food_24),
-                contentDescription = ""
-            )
+            IconButton(onClick = { /*TODO*/ }) {
+                Icon(
+                    painter = painterResource(id = com.njagi.foodie.R.drawable.baseline_filter_list_24),
+                    contentDescription = null
+                )
+            }
+
         },
         modifier = Modifier
             .fillMaxWidth()
