@@ -23,7 +23,7 @@ fun SearchInputBox() {
 
     OutlinedTextField(value = "",
         onValueChange = {},
-        placeholder = { Text(text = "Search for Ingredients, recipes e.t.c ...", ) },
+        placeholder = { Text(text = "Search for Recipes e.t.c ...", modifier = Modifier.fillMaxWidth() ) },
         leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = null) },
         trailingIcon = {
             IconButton(onClick = { /*TODO*/ }) {

@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.rememberNavController
 import com.njagi.foodie.presentation.HomeScreen
 import com.njagi.foodie.presentation.NavGraphs
 import com.njagi.foodie.presentation.destinations.HomeScreenDestination
@@ -24,11 +25,15 @@ class MainActivity : ComponentActivity() {
         setContent {
             FoodieTheme {
 
+//                val navcontroller = rememberNavController()
+
            DestinationsNavHost(navGraph = NavGraphs.root){
 
                composable(HomeScreenDestination){
                    HomeScreen(
-                       recipeViewModel = hiltViewModel()
+                       recipeViewModel = hiltViewModel(),
+                       navigator = destinationsNavigator
+
                    )
                }
            }

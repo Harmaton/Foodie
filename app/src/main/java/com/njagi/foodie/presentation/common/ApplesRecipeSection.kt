@@ -1,8 +1,10 @@
 package com.njagi.foodie.presentation.common
 
+import android.service.autofill.OnClickAction
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.Card
@@ -20,29 +22,20 @@ import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import com.njagi.foodie.model_recipe.Recipes
 import com.njagi.foodie.model_recipe.RecipesItem
+import com.njagi.foodie.presentation.destinations.RecipeDetailsScreenDestination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
 @Composable
-fun ApplesRecipeSection(recipes: Recipes) {
-    LazyRow(modifier = Modifier
-        .height(200.dp).padding(top=1.dp),
-      contentPadding = PaddingValues(10.dp),
-        horizontalArrangement = Arrangement.spacedBy(20.dp)
-        ) {
-        items(recipes.size){
-            Recipe(RecipeItem = recipes[it])
-        }
-    }
-}
-
-@Composable
-fun Recipe(RecipeItem :RecipesItem ) {
+fun RecipeItemCard(RecipeItem :RecipesItem, navigator: DestinationsNavigator) {
 Box(modifier = Modifier
     .width(200.dp)
     .height(200.dp).background(Color.LightGray),
     propagateMinConstraints = true) {
     Card(modifier = Modifier
         .height(150.dp)
-        .fillMaxWidth()
+        .fillMaxWidth().clickable {
+                                  navigator.navigate(RecipeDetailsScreenDestination())
+        }
         ,
         border = BorderStroke(1.dp, Color.Black)
     ) {

@@ -17,9 +17,29 @@ class RecipeViewModel @Inject constructor(private val recipeRepo: RecipeReposito
     private var _recipestate = MutableStateFlow<RecipeState>(RecipeState.Empty)
     val recipestate: StateFlow<RecipeState> = _recipestate
 
+    private var _recipeitemstate = MutableStateFlow<RecipeItemstate>(RecipeItemstate.Empty)
+    val recipeitemstate: StateFlow<RecipeItemstate> = _recipeitemstate
+
     init {
    getRecipesByIngredients()
+        getItem()
     }
+
+    private fun getItem() {
+        _recipeitemstate.value = RecipeItemstate.Loading
+
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val recipeItemResponse = recipeRepo.getRecipesItem()
+                _recipeitemstate.value = RecipeItemstate.Success(recipeItemResponse)
+            }catch (exception: HttpException){
+                _recipeitemstate.value = RecipeItemstate.Error("Check Internet")
+            }catch (exception: IOException){
+                _recipeitemstate.value = RecipeItemstate.Error("Gotta Be a Problem")
+            }
+        }
+    }
+
     private fun getRecipesByIngredients(){
         _recipestate.value = RecipeState.Loading
 
