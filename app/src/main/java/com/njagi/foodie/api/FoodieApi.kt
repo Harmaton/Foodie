@@ -9,7 +9,7 @@ interface FoodieApi {
 
     @GET(CONSTANTS.FINDBY_INGREDIENTS_ENDP)
     suspend fun searchRecipeByIngridient(): Recipes
-
-    @GET(CONSTANTS.FINDBY_INGREDIENTS_ENDP)
-    suspend fun getRecipeItem(): RecipesItem
+//
+//    @GET(CONSTANTS.FINDBY_INGREDIENTS_ENDP)
+//    suspend fun getRecipeItem(): RecipesItem
 }

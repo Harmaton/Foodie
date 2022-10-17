@@ -39,8 +39,6 @@ fun RecipeDetailsScreen(
     navigator: DestinationsNavigator
 ) {
 
- val recipeViewModel : RecipeViewModel = hiltViewModel()
-
     Column(modifier = Modifier.fillMaxSize()
     , verticalArrangement = Arrangement.spacedBy(12.dp) ){
 
@@ -56,21 +54,7 @@ fun RecipeDetailsScreen(
  }
         }
 
-        when(val state = recipeViewModel.recipeitemstate.collectAsState().value){
-
-            is RecipeItemstate.Empty -> Text(text = "Empty")
-
-            is RecipeItemstate.Loading -> Text(text = " Loading ...")
-
-            is RecipeItemstate.Success ->  Column(modifier = Modifier.fillMaxSize()) {
-
-                FetchDetails(recipeItem = state.data)
-            }
-
-            is RecipeItemstate.Error -> Text(text = state.message)
-
-        }
-
+       FetchDetails(recipeItem = recipeItem)
 
     }
 

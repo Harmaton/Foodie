@@ -22,7 +22,7 @@ class RecipeViewModel @Inject constructor(private val recipeRepo: RecipeReposito
 
     init {
    getRecipesByIngredients()
-        getItem()
+//        getItem()
     }
 
     private fun getItem() {

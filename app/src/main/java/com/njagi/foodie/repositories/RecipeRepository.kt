@@ -9,8 +9,8 @@ class RecipeRepository @Inject constructor (private val api: FoodieApi) {
     suspend fun getRecipesIngredients(): Recipes {
         return api.searchRecipeByIngridient()
     }
-
-    suspend fun getRecipesItem() :RecipesItem{
-        return api.getRecipeItem()
-    }
+//
+//    suspend fun getRecipesItem() :RecipesItem{
+//        return api.getRecipeItem()
+//    }
 }
