@@ -26,6 +26,7 @@ import coil.base.R
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import com.njagi.foodie.model_recipe.RecipesItem
+import com.njagi.foodie.presentation.common.RecipeScreenNavArgs
 import com.njagi.foodie.viewmodels.RecipeItemstate
 import com.njagi.foodie.viewmodels.RecipeState
 import com.njagi.foodie.viewmodels.RecipeViewModel
@@ -35,7 +36,7 @@ import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 @Destination
 @Composable
 fun RecipeDetailsScreen(
-    recipeItem: RecipesItem,
+    recipeItem :RecipesItem,
     navigator: DestinationsNavigator
 ) {
 
@@ -50,6 +51,7 @@ fun RecipeDetailsScreen(
        verticalAlignment = Alignment.CenterVertically){
 
  IconButton(onClick = { navigator.popBackStack() }, ) {
+
      Icon(imageVector = Icons.Default.ArrowBack, contentDescription = null, tint = Color.Black)
  }
         }
