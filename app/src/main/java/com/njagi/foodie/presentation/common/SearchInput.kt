@@ -44,5 +44,4 @@ fun SearchInputBox() {
             cursorColor = androidx.compose.ui.graphics.Color.Gray,
             trailingIconColor = androidx.compose.ui.graphics.Color.Red
         ))
-
 }
