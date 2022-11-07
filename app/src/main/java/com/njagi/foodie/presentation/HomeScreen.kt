@@ -19,7 +19,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.compose.rememberNavController
 import coil.base.R
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
@@ -97,7 +96,7 @@ fun RecipeItemCard(
             .fillMaxWidth()
             .clickable {
                 // am trying to navigate to the details screen here
-                navigator.navigate(RecipeDetailsScreenDestination(recipeItem))
+                navigator.navigate(RecipeDetailsScreenDestination())
             },
             border = BorderStroke(1.dp, Color.Black)
         ) {
