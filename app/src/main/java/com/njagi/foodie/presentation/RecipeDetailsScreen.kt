@@ -69,7 +69,7 @@ fun FetchDetails(recipeItem: RecipesItem) {
         ImageRequest.Builder(LocalContext.current)
             .data(data = recipeItem.image)
             .apply (block = fun ImageRequest.Builder.() {
-                placeholder(coil.base.R.drawable.notification_template_icon_bg)
+                placeholder(R.drawable.notification_template_icon_bg)
                 crossfade(true)
             }).build()
 
