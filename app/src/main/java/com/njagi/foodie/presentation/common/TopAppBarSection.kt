@@ -75,7 +75,7 @@ fun TextFoodie() {
 @Preview(showBackground = true)
 @Composable
 fun TopAppBarPreview() {
-    FoodieTheme() {
+    FoodieTheme {
         TopAppSection()
     }
 }
