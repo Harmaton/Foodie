@@ -23,7 +23,7 @@ fun SearchInputBox() {
 
     OutlinedTextField(value = "",
         onValueChange = {},
-        placeholder = { Text(text = "Search for Recipes e.t.c ...", modifier = Modifier.fillMaxWidth() ) },
+        placeholder = { Text(text = "Search...", modifier = Modifier.fillMaxWidth() ) },
         leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = null) },
         trailingIcon = {
             IconButton(onClick = { /*TODO*/ }) {
@@ -40,7 +40,7 @@ fun SearchInputBox() {
             .background(androidx.compose.ui.graphics.Color.White), shape = RoundedCornerShape(8.dp),
         colors = TextFieldDefaults.outlinedTextFieldColors(
             focusedBorderColor = androidx.compose.ui.graphics.Color.Red,
-            unfocusedBorderColor = androidx.compose.ui.graphics.Color.LightGray,
+            unfocusedBorderColor = androidx.compose.ui.graphics.Color.Black,
             cursorColor = androidx.compose.ui.graphics.Color.Gray,
             trailingIconColor = androidx.compose.ui.graphics.Color.Red
         ))
