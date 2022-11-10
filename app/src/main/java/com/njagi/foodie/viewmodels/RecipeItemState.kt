@@ -1,7 +1,7 @@
 package com.njagi.foodie.viewmodels
 
 
-import com.njagi.foodie.model_recipe.RecipesItem
+import com.njagi.foodie.data.recipe_dto.RecipesItem
 
 sealed class RecipeItemstate{
     object Empty: RecipeItemstate()

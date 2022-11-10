@@ -22,8 +22,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import coil.base.R
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
-import com.njagi.foodie.model_recipe.Recipes
-import com.njagi.foodie.model_recipe.RecipesItem
+import com.njagi.foodie.data.recipe_dto.Recipes
+import com.njagi.foodie.data.recipe_dto.RecipesItem
 import com.njagi.foodie.presentation.common.HeaderText
 import com.njagi.foodie.presentation.common.SearchInputBox
 import com.njagi.foodie.presentation.common.TopAppSection
@@ -49,7 +49,7 @@ fun HomeScreen(recipeViewModel: RecipeViewModel = hiltViewModel(),
         TopAppSection()
         SearchInputBox()
         HeaderText(text = "Apple + Flour Recipes")
-        when (val state = recipeViewModel.recipestate.collectAsState().value) {
+        when (val state = recipeViewModel.`recipe state`.collectAsState().value) {
             is RecipeState.Empty -> Text(text = "Empty")
             is RecipeState.Loading -> Text(text = "Loading ...")
             is RecipeState.Success -> Column(
