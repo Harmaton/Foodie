@@ -6,7 +6,7 @@ import com.njagi.foodie.utils.Resource
 
 
 data class RecipeState(
-    val recipeItems: List<RecipesItem>,
+    val recipeItems: List<RecipesItem> = emptyList(),
     val isLoading: Boolean = true,
     val error: String? = null
 )
