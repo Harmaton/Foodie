@@ -9,6 +9,6 @@ interface FoodieApi {
 
     @GET(CONSTANTS.FINDBY_INGREDIENTS_ENDP)
 
-    suspend fun searchRecipeByIngridient(): ArrayList<RecipesItem>
+    suspend fun searchRecipeByIngridient(): List<RecipesItem>
 
 }

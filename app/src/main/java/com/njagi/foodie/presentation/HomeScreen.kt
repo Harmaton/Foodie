@@ -49,7 +49,7 @@ fun HomeScreen(recipeViewModel: RecipeViewModel = hiltViewModel(),
         TopAppSection()
         SearchInputBox()
         HeaderText(text = "Apple + Flour Recipes")
-        when (val state = recipeViewModel.`recipe state`.collectAsState().value) {
+        when (val state = recipeViewModel.recipestate.collectAsState().value) {
             is RecipeState.Empty -> Text(text = "Empty")
             is RecipeState.Loading -> Text(text = "Loading ...")
             is RecipeState.Success -> Column(
