@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class RecipeItem(
+data class RecipesItem(
     val id : Int,
     val image: String,
     val likes :Int,
