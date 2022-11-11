@@ -1,13 +1,13 @@
 package com.njagi.foodie.viewmodels
 
 
-import com.njagi.foodie.data.recipe_dto.RecipesItem
-import com.njagi.foodie.domain.model.RecipeItem
+import com.njagi.foodie.domain.model.Recipe
+
 
 
 
 data class RecipeState(
-    val recipeItems: List<RecipesItem> = emptyList(),
+    val recipeItems: List<Recipe> = emptyList(),
     val isLoading: Boolean = true,
     val error: String? = null
 )

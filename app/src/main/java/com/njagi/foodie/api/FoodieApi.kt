@@ -8,7 +8,6 @@ import retrofit2.http.GET
 interface FoodieApi {
 
     @GET(CONSTANTS.FINDBY_INGREDIENTS_ENDP)
-
     suspend fun searchRecipeByIngridient(): List<RecipesItem>
 
 }
