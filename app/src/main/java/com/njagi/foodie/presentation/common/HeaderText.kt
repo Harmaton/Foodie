@@ -55,7 +55,7 @@ fun HeaderText(text: String) {
 @Composable
 fun headerPreview(){
 
-    FoodieTheme() {
+    FoodieTheme {
         HeaderText(text = "Vegeterian")
         
     }

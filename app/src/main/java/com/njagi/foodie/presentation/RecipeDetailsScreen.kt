@@ -76,7 +76,7 @@ fun RecipeDetailsScreen(
 
 @Composable
 fun Foods(recipeItem: Recipe, modifier: Modifier) {
-Column() {
+Column {
     Box(modifier = Modifier.weight(1f), contentAlignment = Alignment.Center) {
         Image(painter = rememberAsyncImagePainter(
             ImageRequest.Builder(LocalContext.current)

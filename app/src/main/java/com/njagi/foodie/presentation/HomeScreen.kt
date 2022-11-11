@@ -101,7 +101,7 @@ fun HomeScreen(recipeViewModel: RecipeViewModel = hiltViewModel(),
                 },
             border = BorderStroke(1.dp, Color.Black)
         ) {
-            Column() {
+            Column {
                 Image(
                     painter = rememberAsyncImagePainter(
                         ImageRequest.Builder(LocalContext.current)
@@ -130,9 +130,7 @@ fun HomeScreen(recipeViewModel: RecipeViewModel = hiltViewModel(),
 
             //likes badge
 
-
         }
-
     }
 }
 
@@ -140,7 +138,7 @@ fun HomeScreen(recipeViewModel: RecipeViewModel = hiltViewModel(),
 @Preview(showBackground = true)
 fun HomeScreenPreview(){
     FoodieTheme {
-        Column() {
+        Column {
             TopAppSection()
             SearchInputBox()
             HeaderText(text = "Vegeterian")
