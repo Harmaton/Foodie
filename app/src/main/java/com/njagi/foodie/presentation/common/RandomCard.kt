@@ -120,7 +120,8 @@ fun RandomCard(
 
                         Icon(painter = painterResource(id = R.drawable.baseline_play_arrow_24),
                             contentDescription = null,
-                            tint = Color.White
+                            tint = Color.White,
+                            modifier = Modifier.size(15.dp)
                             )
 
                     }

@@ -114,7 +114,7 @@ fun HomeScreen(recipeViewModel: RecipeViewModel = hiltViewModel(),
                     ), contentDescription = null,
                     modifier = Modifier
                         .fillMaxSize(),
-                    contentScale = ContentScale.FillBounds
+                    contentScale = ContentScale.Crop
                 )
             }
 

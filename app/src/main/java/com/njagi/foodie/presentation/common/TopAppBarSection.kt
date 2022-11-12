@@ -1,13 +1,18 @@
 package com.njagi.foodie.presentation.common
 
 
+import android.widget.ImageButton
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.LinearGradient
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.TextStyle
@@ -31,14 +36,6 @@ fun TopAppSection(
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
-
-            IconButton(onClick = {}) {
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_baseline_style_24),
-                    contentDescription = "mode switch",
-                )
-            }
-
             TextFoodie()
 
             IconButton(
@@ -47,7 +44,7 @@ fun TopAppSection(
                 ) {
                 Icon(
                     painter = painterResource(id = R.drawable.baseline_message_24),
-                    contentDescription = ""
+                    contentDescription = null
                 )
             }
 
