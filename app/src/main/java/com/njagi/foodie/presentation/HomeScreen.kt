@@ -26,6 +26,7 @@ import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import com.njagi.foodie.domain.model.Recipe
 import com.njagi.foodie.presentation.common.HeaderText
+import com.njagi.foodie.presentation.common.RandomCard
 import com.njagi.foodie.presentation.common.SearchInputBox
 import com.njagi.foodie.presentation.common.TopAppSection
 import com.njagi.foodie.presentation.destinations.RecipeDetailsScreenDestination
@@ -97,7 +98,7 @@ fun HomeScreen(recipeViewModel: RecipeViewModel = hiltViewModel(),
                 .fillMaxWidth()
                 .clickable {
                     // am trying to navigate to the details screen here
-                  navigator.navigate(RecipeDetailsScreenDestination(recipeItem))
+                    navigator.navigate(RecipeDetailsScreenDestination(recipeItem))
                 },
             border = BorderStroke(1.dp, Color.Black)
         ) {
@@ -141,6 +142,8 @@ fun HomeScreenPreview(){
         Column {
             TopAppSection()
             SearchInputBox()
+            Spacer(modifier = Modifier.height(6.dp))
+            RandomCard()
             HeaderText(text = "Vegeterian")
         }
 
