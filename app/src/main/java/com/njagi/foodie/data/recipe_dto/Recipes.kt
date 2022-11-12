@@ -1,4 +1,4 @@
-package com.njagi.foodie.model_recipe
+package com.njagi.foodie.data.recipe_dto
 
 
 class Recipes : ArrayList<RecipesItem>()

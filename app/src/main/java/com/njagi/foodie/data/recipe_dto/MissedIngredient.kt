@@ -1,19 +1,21 @@
-package com.njagi.foodie.model_recipe
+package com.njagi.foodie.data.recipe_dto
 
 
 import com.google.gson.annotations.SerializedName
 
-data class UsedIngredient(
+data class MissedIngredient(
     @SerializedName("aisle")
     val aisle: String,
     @SerializedName("amount")
     val amount: Double,
+    @SerializedName("extendedName")
+    val extendedName: String,
     @SerializedName("id")
     val id: Int,
     @SerializedName("image")
     val image: String,
     @SerializedName("meta")
-    val meta: List<Any>,
+    val meta: List<String>,
     @SerializedName("name")
     val name: String,
     @SerializedName("original")
