@@ -25,8 +25,10 @@ import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -46,14 +48,16 @@ fun RandomCard(
 //    painter: Painter,
 //    text: String
 ){
-    val selected = remember {
+
+    var expanded by remember {
         mutableStateOf(false)
     }
 
     Card( modifier = Modifier
         .fillMaxWidth()
         .padding(8.dp)
-        .height(140.dp).clickable {
+        .height(180.dp)
+        .clickable {
 
         } ,
         elevation = 0.dp,
@@ -61,7 +65,6 @@ fun RandomCard(
         border = BorderStroke(0.dp, Color.Black)
 
         ){
-
 //        Image(painter = rememberAsyncImagePainter(
 //            ImageRequest.Builder(LocalContext.current)
 //                .data(data = R.mipmap.random)
@@ -81,8 +84,6 @@ fun RandomCard(
                 contentScale = ContentScale.Crop
             )
         }
-        
-
 
         Row(  modifier = Modifier
             .padding(start = 10.dp, end = 2.dp)
@@ -102,6 +103,8 @@ fun RandomCard(
                     fontSize = 18.sp
                 )
 
+
+
                 AnimatedVisibility(visible = true
                     ) {
                     OutlinedButton(onClick = { /*TODO*/ },
@@ -117,21 +120,15 @@ fun RandomCard(
                             color = Color.White,
                             fontSize = 8.sp,
                         )
-
                         Icon(painter = painterResource(id = R.drawable.baseline_play_arrow_24),
                             contentDescription = null,
                             tint = Color.White,
                             modifier = Modifier.size(15.dp)
                             )
-
                     }
                 }
-
-
-
             }
         }
-
     }
 }
 

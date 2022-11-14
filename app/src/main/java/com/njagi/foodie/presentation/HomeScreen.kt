@@ -47,38 +47,36 @@ fun HomeScreen(recipeViewModel: RecipeViewModel = hiltViewModel(),
             .fillMaxSize()
             .background(Color.White)
             .padding(5.dp),
-        topBar = {TopAppSection()}
+        topBar = { TopAppSection() }
     ) { padding ->
 
-
-        SearchInputBox()
-        Spacer(modifier = Modifier.height(10.dp))
-        HeaderText(text = "Apple + Flour Recipes")
-        Spacer(modifier = Modifier
-            .height(5.dp)
-            .padding(padding))
-
-
-        val recipesState = recipeViewModel.recipe_state.value
-
-
-        Box(modifier = Modifier.fillMaxWidth() ) {
-            LazyRow(
-                modifier = Modifier
-                    .height(200.dp)
-                    .padding(top = 1.dp),
-                contentPadding = PaddingValues(10.dp),
-                horizontalArrangement = Arrangement.spacedBy(20.dp)
+        Column( modifier = Modifier.fillMaxSize(),
+              verticalArrangement = Arrangement.SpaceBetween
             ) {
-               items(recipesState.recipeItems){ recipe ->
 
-                  RecipeItemCard(recipeItem = recipe , navigator = navigator)
-               }
+
+            SearchInputBox()
+            RandomCard()
+            HeaderText(text = "Apple + Flour Recipes")
+            val recipesState = recipeViewModel.recipe_state.value
+
+            Box(modifier = Modifier.fillMaxWidth()) {
+                LazyRow(
+                    modifier = Modifier
+                        .height(200.dp)
+                        .padding(top = 1.dp),
+                    contentPadding = PaddingValues(10.dp),
+                    horizontalArrangement = Arrangement.spacedBy(20.dp)
+                ) {
+                    items(recipesState.recipeItems) { recipe ->
+
+                        RecipeItemCard(recipeItem = recipe, navigator = navigator)
+                    }
+                }
             }
         }
     }
 }
-
 
 @Composable
  fun RecipeItemCard(
@@ -102,7 +100,11 @@ fun HomeScreen(recipeViewModel: RecipeViewModel = hiltViewModel(),
                 },
             border = BorderStroke(1.dp, Color.Black)
         ) {
-            Column {
+            Column(  modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.SpaceBetween,
+                horizontalAlignment = Alignment.Start
+
+            ) {
                 Image(
                     painter = rememberAsyncImagePainter(
                         ImageRequest.Builder(LocalContext.current)
@@ -116,20 +118,18 @@ fun HomeScreen(recipeViewModel: RecipeViewModel = hiltViewModel(),
                         .fillMaxSize(),
                     contentScale = ContentScale.Crop
                 )
+
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = recipeItem.title,
+                    maxLines = 2,
+                    fontSize = 17.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    modifier = Modifier.padding(5.dp).fillMaxWidth()
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                //likes badge
             }
-
-            Spacer(modifier = Modifier.height(4.dp))
-
-            Text(
-                text = recipeItem.title,
-                maxLines = 2,
-                fontSize = 16.sp,
-                fontWeight = FontWeight.SemiBold
-            )
-
-            Spacer(modifier = Modifier.height(4.dp))
-
-            //likes badge
 
         }
     }

@@ -40,6 +40,7 @@ fun RecipeDetailsScreen(
     recipeItem : Recipe,
     navigator: DestinationsNavigator
 ) {
+
  Scaffold( backgroundColor = Color.White,
            topBar = {
                Row(
