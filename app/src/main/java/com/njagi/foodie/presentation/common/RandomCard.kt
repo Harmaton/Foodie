@@ -56,7 +56,7 @@ fun RandomCard(
     Card( modifier = Modifier
         .fillMaxWidth()
         .padding(8.dp)
-        .height(180.dp)
+        .height(200.dp)
         .clickable {
 
         } ,

@@ -27,8 +27,8 @@ fun HeaderText(text: String) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 10.dp, top = 4.dp, end = 10.dp, bottom = 10.dp)
-            .height(50.dp)
+            .padding(4.dp)
+            .height(30.dp)
             ,
         horizontalArrangement = Arrangement.Start,
         verticalAlignment = Alignment.CenterVertically
@@ -41,7 +41,7 @@ fun HeaderText(text: String) {
                   fontWeight = FontWeight.Black ,
                   fontFamily = FontFamily.Monospace,
                   modifier = Modifier.padding(start = 10.dp),
-                   style = TextStyle(fontStyle = FontStyle.Normal)
+                   style = TextStyle(fontStyle = FontStyle.Italic)
 
                   )
           }
